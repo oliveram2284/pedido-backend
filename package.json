@@ -16,6 +16,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
-        "@material-ui/core": "^4.12.3"
+        "@material-ui/core": "^4.12.3",
+        "@material-ui/icons": "^4.11.2"
     }
 }
