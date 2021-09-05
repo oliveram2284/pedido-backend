@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 class EmpresaSeeder extends Seeder
 {
     /**
@@ -13,6 +14,9 @@ class EmpresaSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Empresa::factory(5)->create();
+        Storage::deleteDirectory('images/empresas');
+        Storage::makeDirectory('images/empresas');
+
+        \App\Models\Empresa::factory(20)->create();
     }
 }
