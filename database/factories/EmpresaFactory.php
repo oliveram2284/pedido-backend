@@ -23,7 +23,7 @@ class EmpresaFactory extends Factory
     {
         return [
             'nombre' => $this->faker->unique()->company(),
-            'imagen' => $this->faker->unique()->image(storage_path('images'), $width = 640, $height = 480)
+            'imagen' => $this->faker->unique()->image(public_path('images/empresas'), $width = 640, $height = 480,null, false)
         ];
     }
 }
