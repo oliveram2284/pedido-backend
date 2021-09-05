@@ -15,11 +15,17 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('empresa_id');
+
             $table->string('nombre');
             $table->integer('cantidad')->default(0);
             $table->decimal('precio_unitario',15,4)->default(0);
             $table->tinyInteger('estado')->default(0);
             $table->timestamps();
+
+            // Relacion con tabla empresa
+            $table->foreign('empresa_id')->references('id')->on('empresas');
+
         });
     }
 
