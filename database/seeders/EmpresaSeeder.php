@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Empresa;
 class EmpresaSeeder extends Seeder
 {
     /**
@@ -14,9 +15,11 @@ class EmpresaSeeder extends Seeder
      */
     public function run()
     {
-        Storage::deleteDirectory('images/empresas');
-        Storage::makeDirectory('images/empresas');
-
-        \App\Models\Empresa::factory(20)->create();
+        Storage::deleteDirectory('public/empresas');
+        Storage::makeDirectory('public/empresas');
+        //exit;*/
+        Empresa::factory(20)->create()->each(function($e){
+            echo "==> Empresa creada: ".($e->id);
+        });
     }
 }
