@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Empresa;
+use App\Models\Rubro;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class EmpresaFactory extends Factory
@@ -21,9 +22,12 @@ class EmpresaFactory extends Factory
      */
     public function definition()
     {
+        $rubro = Rubro::all()->random(1)->first();
+
         return [
-            'nombre' => $this->faker->unique()->company(),
-            'imagen' => $this->faker->unique()->image(public_path('storage/empresas'), $width = 640, $height = 480,null, false)
+            'nombre'   => $this->faker->unique()->company(),
+            'rubro_id' => $rubro->id,
+            'imagen'   => $this->faker->unique()->image(public_path('storage/empresas'), $width = 640, $height = 480,null, false)
         ];
     }
 }

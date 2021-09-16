@@ -16,9 +16,11 @@ class CreateEmpresasTable extends Migration
         Schema::create('empresas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
+            $table->string('direccion',200)->nullable(true);
+            $table->string('telefono',20)->nullable(true);
+            $table->string('celular',15)->nullable(true);
             $table->string('imagen')->nullable(true);
             $table->tinyInteger('estado')->default(0);
-            //$table->softDeletes('');
             $table->timestamps();
         });
     }
