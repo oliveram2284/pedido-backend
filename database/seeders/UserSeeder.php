@@ -25,6 +25,7 @@ class UserSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password'          => Hash::make('12345678'), // password
                 'role_id'           => 1,
+                'empresa_id'        => 1,
                 'remember_token'    => Str::random(10),
             ],
             [
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
                 'email'             => 'usuario@email.com',
                 'email_verified_at' => now(),
                 'password'          => Hash::make('12345678'), // password
+                'empresa_id'        => 1,
                 'remember_token'    => Str::random(10),
             ]
         ];
