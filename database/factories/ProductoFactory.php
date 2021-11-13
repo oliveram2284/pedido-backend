@@ -27,7 +27,7 @@ class ProductoFactory extends Factory
         return [
             'empresa_id'      => $empresa->id,
             'nombre'          => $this->faker->unique()->words(4,true),
-            'imagen'          => $this->faker->unique()->image(public_path('images/productos'), $width = 400, $height = 200,null, false),
+            'imagen'          => null,//$this->faker->unique()->image(public_path('images/productos'), $width = 400, $height = 200,null, false),
             'cantidad'        => $this->faker->unique()->randomNumber(2),
             'precio_unitario' => $this->faker->unique()->randomFloat(2,$min = 0, $max = 1000),
             'estado'          => 1,
