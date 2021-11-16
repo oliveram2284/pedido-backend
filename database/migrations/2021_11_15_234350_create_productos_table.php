@@ -16,8 +16,10 @@ class CreateProductosTable extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('empresa_id');
-
             $table->string('nombre');
+            $table->string('imagen')->nullable(true);
+            $table->tinyText('resumen')->nullable(true);
+            $table->mediumText('descripcion')->nullable(true);
             $table->integer('cantidad')->default(0);
             $table->decimal('precio_unitario',15,4)->default(0);
             $table->tinyInteger('estado')->default(0);

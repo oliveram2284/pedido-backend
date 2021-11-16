@@ -23,7 +23,7 @@ class EmpresaFactory extends Factory
     public function definition()
     {
         $rubro = Rubro::all()->random(1)->first();
-
+        //var_dump($rubro->id);
         return [
             'nombre'   => $this->faker->unique()->company(),
             'rubro_id' => $rubro->id,
